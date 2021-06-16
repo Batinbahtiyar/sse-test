@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h2 class="display-4">SSe Veri Okuması</h2>
+    </div>
+
+    <form method="get">
+
+        <button type="submit">REFRESH</button>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SseInfos[0].KontratAd)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SseInfos[0].BestBuyPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SseInfos[0].BestBuyQuantity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SseInfos[0].BestSellPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SseInfos[0].BestSellQuantity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SseInfos[0].EventDate)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.SseInfos)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KontratAd)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BestBuyPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BestBuyQuantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BestSellPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BestSellQuantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventDate)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </form>
